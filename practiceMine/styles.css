@@ -1,0 +1,72 @@
+body {
+	background-color :black;
+}
+h1, h4 {
+	text-align: center;
+	color: white;
+}
+.field {
+	width: 530px;
+	height: 530px;
+	margin: 0 auto;
+}
+.line {
+	width: 500px;
+}
+.item {
+	box-sizing: border-box;
+	width: 100px;
+	height: 100px;
+	border-right: 4px groove #99c2ff;
+	border-bottom: 4px groove #99c2ff;
+	float: left;
+	background-color: rgb(237,57,6);
+	line-height: 80px;
+	text-align: center;
+	color: green;
+	font-size: 22px;
+
+}
+.line:first-child .item {
+	border-top: 2px groove #99c2ff;
+}
+.item:first-child {
+	border-left: 2px groove #99c2ff;
+}
+.new-game {
+	text-align: center;
+	margin-top: 30px;
+}
+.new-game button {
+	background-color: yellow;
+	width:200px;
+	height:50px;
+	color:black;
+	font-size: 20px;
+}
+.red  {
+	color: red;
+}
+.open {
+	background-color: #99c2ff;
+}
+.alert {
+	width: 350px;
+	height: 200px;
+	line-height: 70px;
+	position: absolute;
+	margin: 0 auto;
+	left: 100;
+	right: 100;
+	top: 170px;
+	display: none;
+  background-color: red;
+  opacity: 1;
+}
+.bold {
+	font-weight: bold;
+	color: #000;
+}
+.grey {
+	color: #aaa;
+}
