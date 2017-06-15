@@ -1,13 +1,15 @@
 body {
-	background-color :black;
+	background-image: url("https://i.ytimg.com/vi/ZmnvRDqJWEU/maxresdefault.jpg");
+	/*background-image: url("https://ichef.bbci.co.uk/news/660/media/images/83407000/jpg/_83407136_026582162.jpg");*/
+  background-size:cover;
 }
 h1, h4 {
 	text-align: center;
-	color: white;
+	color: rgb(97,90,77);
 }
 .field {
-	width: 530px;
-	height: 530px;
+	width: 500px;
+	height: 500px;
 	margin: 0 auto;
 }
 .line {
@@ -20,7 +22,7 @@ h1, h4 {
 	border-right: 4px groove #99c2ff;
 	border-bottom: 4px groove #99c2ff;
 	float: left;
-	background-color: rgb(237,57,6);
+	background-color: rgb(172,165,153);
 	line-height: 80px;
 	text-align: center;
 	color: green;
@@ -51,17 +53,18 @@ h1, h4 {
 	background-color: #99c2ff;
 }
 .alert {
-	width: 350px;
-	height: 200px;
-	line-height: 70px;
+	width: 400px;
+	height: 400px;
+	line-height: 200px;
 	position: absolute;
 	margin: 0 auto;
-	left: 100;
-	right: 100;
-	top: 170px;
+	margin-left: 170px;
+	top: 70px;
 	display: none;
-  background-color: red;
+	font-size: 40px;
+  background-image:url("https://upload.wikimedia.org/wikipedia/commons/7/79/Operation_Upshot-Knothole_-_Badger_001.jpg");
   opacity: 1;
+	background-size: cover;
 }
 .bold {
 	font-weight: bold;

@@ -1,5 +1,5 @@
 var count = 5;
-var minesAll = 5;
+var minesAll = 6;
 var permit = false;
 var beginTime, endTime, timer;
 
@@ -32,12 +32,13 @@ $(document).ready(function() {
 		if (permit) {
 			parentLine = $(this).parents(".line");
 			parI = $(".line").index(parentLine);
-
 			items = parentLine.find(".item");
+
 			parJ = items.index(this);
 			if (event.which == 1) {
 				if (currentGame.cells[parI][parJ] == -1){
 					currentGame.explosionEnd();
+					$(".item").html("").css("background-color", "gray");
 
 				}
 				else {
@@ -47,25 +48,19 @@ $(document).ready(function() {
 			} else if (event.which == 2) {
 				if ($(this).hasClass("red")) {
 					$(this).removeClass("red").html("");
-					ourPlayer.removeMine();
+
 				} else {
 					$(this).html("&#9967;").addClass("red");
-				    ourPlayer.addMine();
-					currentGame.checkEnd();
+
 				}
 			}
 		}
 	});
 
-	$(".alert button.close").on("click", function() {
-		currentGame.clearGame();
-		delete currentGame;
-		$(".alert").hide();
-	});
 });
 
 function Game() {
-	this.cells = [],
+	this.cells = [];
 	this.createMines = function() {
 		var indI, indJ, cond;
 		var indArr = [];
@@ -87,7 +82,6 @@ function Game() {
 					}
 				}
 			} while (cond);
-			indArr.push(elem);
 			this.cells[indI][indJ] = -1;
 		}
 	},
@@ -123,7 +117,7 @@ function Game() {
 	this.explosionEnd = function() {
 		this.showMines();
 		permit = false;
-		$(".alert-danger").show();
+		$(".alert-danger").show(".explode", {pieces: 16}, 4000);
 	},
 	this.victoryEnd = function() {
 		this.showSumsMines();
@@ -131,12 +125,12 @@ function Game() {
 
 	},
 	this.showMines = function() {
-		$(".item").html("").removeClass("red").addClass("open");
+		$(".item").html("").removeClass("red");
 		for (var i = 0; i < count; i++) {
 			for (var j = 0; j < count; j++) {
 				if (this.cells[i][j] == -1)
 					$(".line").eq(i).find(".item").eq(j)
-					.html("&#x2602;").addClass("bold");
+					.html("&#128163;").addClass("bold");
 			}
 		}
 	}
@@ -146,7 +140,7 @@ function Game() {
 				if (this.cells[i][j] == -1)
 					$(".line").eq(i).find(".item")
 					.eq(j).removeClass("red")
-					.addClass("grey").addClass("open");
+					.addClass("grey");
 			}
 		}
 	}
